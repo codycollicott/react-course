@@ -21,10 +21,7 @@ module.exports = gulp.task('browser-sync', function() {
     }],
     /*
     server: {
-      baseDir: paths.build.html,
-      routes: {
-        "/bower_components": "/"
-      }
+      baseDir: paths.build.html
     },*/
   });
 });
