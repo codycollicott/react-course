@@ -15,8 +15,16 @@ module.exports = gulp.task('browser-sync', function() {
   ];
 
   browserSync.init(files, {
+    serveStatic: [{
+      route: '/react-course',
+      dir: paths.build.html
+    }],
+    /*
     server: {
-      baseDir: paths.build.html
-    },
+      baseDir: paths.build.html,
+      routes: {
+        "/bower_components": "/"
+      }
+    },*/
   });
 });
