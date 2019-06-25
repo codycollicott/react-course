@@ -17,6 +17,6 @@ module.exports = gulp.task('browser-sync', function() {
   browserSync.init(files, {
     server: {
       baseDir: paths.build.html
-    }
+    },
   });
 });
