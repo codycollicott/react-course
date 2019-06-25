@@ -6,14 +6,14 @@ var slideShow = remark.create({
   // Set the slideshow display ratio
   // Default: '4:3'
   // Alternatives: '16:9', ...
-  ratio: '4:3',
+  ratio: '4:1',
 
   // Navigation options
   navigation: {
     // Enable or disable navigating using scroll
     // Default: true
     // Alternatives: false
-    scroll: true,
+    scroll: false,
 
     // Enable or disable navigation using touch
     // Default: true
