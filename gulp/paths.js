@@ -17,7 +17,7 @@ module.exports = {
     html: './build/**/*.html',
     css: './build/css/**/*.css',
     js: './build/js/**/*.js',
-    img: './build/img/**/*'
+    img: './build/img/**/*',
   },
 
   build: {

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>react course v6</title>
+    <meta name="description" content="Some description about the slides">
+    <meta name="author" content="You">
+    <link rel="stylesheet" href="/react-course/css/main.css">
+  </head>
+  <body>
+    <div id="bg"></div>
+    <div id="header">
+      <div id="logo"></div>
+      <div id="nav">
+        <div class="nav-link"> <a href="/react-course/index.html" class="text-white font-bold">Home</a></div>
+        <div class="nav-link"> <a href="/react-course/lessons/index.html" class="text-white font-bold">Lessons</a></div>
+        <div class="nav-link"> <a href="/react-course/exercices/index.html" class="text-white font-bold">Exercies</a></div>
+      </div>
+    </div>
+    <textarea id="source">## State
+
+One of the more powerful aspects of react is the ability to add, edit and delete what is called the `state` in react. A overview of the state is available [here](https://codeburst.io/props-and-state-in-react-native-explained-in-simple-english-8ea73b1d224e) and [here](https://medium.com/the-andela-way/understanding-the-fundamentals-of-state-in-react-79c711be677f).
+
+### Define the state
+Let's take a look at the below code, something new here is the `this.state`. What we are doing here is defining the state for the component to use.
+
+```
+Class Test extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: 'frank'
+    }
+  }
+  render() {
+    return (
+      <div> {this.state.name} </div>
+    )
+  }
+}
+```
+
+---
+## State Part 2
+
+In the last step we looked at setting up the `state` and printing the value we setup as a default. 
+
+### Mutating the state
+the state in react can be mutated, which means we can change the `name:frank` to anything else we want via the function `this.setState()`. Let's look at how we implement 
+
+```
+Class Test extends React.Component {
+  constructor() {
+    super();
+    this.state {
+      name: 'frank'
+    }
+  }
+  componentDidMount() {
+    this.setState({
+      name: "Sussy"
+    })
+  }
+  render() {
+    return (
+      <div> {this.state.name} </div>
+    )
+  }
+}
+```
+
+---
+## State Part 3
+
+In the last step we looked at mutating the set, meaning changing a default value that we had set. When we run this app the change will happen so fast it will look like the name was always set to sussy. However we can tie `events` to the `setState` function. I order to do that we would change our code to something like:  
+
+```
+Class Test extends React.Component {
+  constructor() {
+    super();
+    this.state {
+      name: 'frank'
+    }
+    this.changeName = this.changeName.bind(this);
+  }
+  changeName() {
+    this.setState({
+      name: "Sussy"
+    })
+  }
+  render() {
+    return (
+      <div> 
+        <h3>{this.state.name}</h3>
+        <h3 onClick={this.changeName}> Change name </h3> 
+      </div>
+    )
+  }
+}
+```
+
+---
+## State Part 4
+
+So a few new things our happening here, one: is the `this.changeName = this.changeName.bind(this)` this line is used for allowing the `changeName` function to be used within our render. Two: is the `onClick` we have attached to the `<h3>`. This is a JS method that we are allowed calling on any HTML element, it is fired when the user click on that element.
+If you want to see exactly what is happening here throw some `console.logs()` in each method.
+```
+Class Test extends React.Component {
+  constructor() {
+    super();
+    this.state {
+      name: 'frank'
+    }
+    this.changeName = this.changeName.bind(this);
+    console.log("constructor");
+  }
+  changeName() {
+
+    this.setState({
+      name: "Sussy"
+    })
+    console.log("changeName")
+  }
+  render() {
+    console.log("Render")
+    return (
+      <div> 
+        <h3>{this.state.name}</h3>
+        <h3 onClick={this.changeName}> Change name </h3> 
+      </div>
+    )
+  }
+}
+```
+The output for something like this should be: 
+1. constructor
+2. Render
+3. ** AFTER CLICK **
+4. ChangeName
+5. Render
+
+---
+## React State
+
+Before moving on to the next section try and complete exercices 5 [here](/react-course/exercices/exercices-5.html#1) and 6 [here](/react-course/exercices/exercices-6.html#1)
+
+    </textarea>
+    <script src="/react-course/js/vendor/remark.min.js"></script>
+    <script src="/react-course/js/vendor/remark-language.js"></script>
+    <script src="/react-course/js/main.js"></script>
+  </body>
+</html>

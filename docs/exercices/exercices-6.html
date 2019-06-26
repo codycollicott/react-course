@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>react course v5</title>
+    <title>react course v6</title>
     <meta name="description" content="Some description about the slides">
     <meta name="author" content="You">
     <link rel="stylesheet" href="/react-course/css/main.css">
@@ -19,54 +19,14 @@
         <div class="nav-link"> <a href="/react-course/exercices/index.html" class="text-white font-bold">Exercies</a></div>
       </div>
     </div>
-    <textarea id="source">## React and Classes
+    <textarea id="source">## State
 
-Sometimes we need to use classes in react, mainly becuase it allows to make use of some of the built in methods of react. Such as: 
+For this exercice we will creating a default state for our `App.js` and then modifing that state when pushing on an element on the page. It should look something like this :
 
-1. ComponentDidMount
-2. ComponentWillUpdate
+<img src="/react-course/img/lesson/onclick.gif">
 
-Methods like these are called life-cycle events in react, you can read about them [here](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282). These methods are really helpful when loading dyanmic content, such as api data. 
+if your are having problems you can download the completed `src` [here](/react-course/img/downloads/exercices/exercice-6/src.zip)  
 
-So let's look at the differences between the function based component that we have been using and the new class based that we will be using. 
-``` JS
-// function
-export function App() {
-  return (
-    ...
-  )
-}
-// Class
-export default class App extends React.Component {
-  render() {
-    return (
-      ...
-    )
-  }
-}
-```
----
-## React and Classes part 2
-
-Next up is understanding one of the react life-cycle methods : `componentDidMount`. The react life cycle is a circle of events that fire in order. 
-
-<img src="/img/lesson/lifeCycle.png" />
-
-``` JS
-export default class App extends React.Component {
-  componentDidMount() {
-    console.log("did mount");
-  }
-  render() {
-    console.log("render");
-    return (
-      ...
-    )
-  }
-}
-```
-
-The output here would be `render` then `did mount`.
 ---
 
     </textarea>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>react course v5</title>
+    <title>react course v6</title>
     <meta name="description" content="Some description about the slides">
     <meta name="author" content="You">
     <link rel="stylesheet" href="/react-course/css/main.css">
@@ -19,43 +19,15 @@
         <div class="nav-link"> <a href="/react-course/exercices/index.html" class="text-white font-bold">Exercies</a></div>
       </div>
     </div>
-    <textarea id="source">## Import and render JSON
+    <textarea id="source">## Passing Props
 
-Next we will be importing and rendering JSON data. First up we need to download and import a .json file. You can get it [here](https://google.com) 
+Next we are going to be passing props to the `<Header />` component. Right now this component should be used to render static information, however we have hard-coded all the values in the Header. We can fix this by passing props to the Header. So we need to change our code a bit. Our visual output again will not change but we should attach a hard-coded prop to our header component 
 
-Once we have the json file in our directory we will need to import it into our application, so in our `app.js` we need to have something like: 
+### Output
+1. the title of "My first JSX" should be dynamic and come from the app.js
+2. the button of "click me" should be dynamic and come from the app.js
 
-```JS
-import students from './students.json';
-```
-
-This should give us access to the info in students as an array, we can loop over this and render the `<Card />` component for each iteration 
-
----
-## Import and render JSON Part 2
-
-Next we will be creating a map method to loop through the students info, your code inside your `app.js` will look like this: 
-
-```JS
-function App() {
-  return (
-    <div className="App bg">
-      <div className="wrap">
-        <div className="flex cardWrap jus-between wrap">
-          {students && students.map(student => (
-            <Card 
-              name={student.name}
-              degree={student.degree}
-              quote={student.quote}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-```
-The `students &&` part before the map is a check to make sure students is defined. The `students.map(student => (` is what starts our loop, where `student` is a variable defined containing the current iteration.
+If you are having problems you can download the completed `src` [here](/react-course/img/downloads/exercices/exercice-3/src.zip)  
 
 ---
 

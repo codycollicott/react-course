@@ -10,5 +10,7 @@ We are going to be looking at the basic concepts of JS and then moving on to a J
 4. [Const & Let](/react-course/lessons/lesson-4.html)
 5. [Maps and Objects](/react-course/lessons/lesson-5.html)
 6. [Props](/react-course/lessons/lesson-6.html)
+7. [State](/react-course/lessons/lesson-7.html)
+7. [API Calls](/react-course/lessons/lesson-8.html)
 
 ---

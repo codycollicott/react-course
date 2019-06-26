@@ -4,7 +4,7 @@ body {
   font-family: "Roboto";
   font-weight: 200;
   line-height: 30px;
-  color: #9292a8;
+  color: #444;
 }
 h1,
 h2,
@@ -19,6 +19,9 @@ h3 {
 }
 body {
   font-family: "Roboto";
+}
+img {
+  max-width: 100%;
 }
 .remark-slide-content h1 {
   font-size: 3em;

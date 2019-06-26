@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>react course v6</title>
+    <meta name="description" content="Some description about the slides">
+    <meta name="author" content="You">
+    <link rel="stylesheet" href="/react-course/css/main.css">
+  </head>
+  <body>
+    <div id="bg"></div>
+    <div id="header">
+      <div id="logo"></div>
+      <div id="nav">
+        <div class="nav-link"> <a href="/react-course/index.html" class="text-white font-bold">Home</a></div>
+        <div class="nav-link"> <a href="/react-course/lessons/index.html" class="text-white font-bold">Lessons</a></div>
+        <div class="nav-link"> <a href="/react-course/exercices/index.html" class="text-white font-bold">Exercies</a></div>
+      </div>
+    </div>
+    <textarea id="source">## API Calls
+
+So, React really should never be used as a "source of information" for an application. Ideally React is used to present that information in a fast and optimized way. Which means we should get the content for the application from another source, a very popular way to do this is via API calls. So let's look at the anatomy of how these are used in React. 
+
+### Install an agent
+`axios` is an `NPM` module that allows for easier API calls, we can add this to our application by running `npm install axios --save`. After this we have to import axios at the top of our file like this: `import axios from "axios"`
+
+### Make the call
+We usually make kan API call in a React method called `componentDidMount`. It will look something like this:
+
+```
+Class Test extends React.Component {
+  componentDidMount() {
+    axios.get('https://codycollicott.github.io/yearbook/Data/students.json')
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log("an error occured")
+      console.log(error);
+    })
+  }
+  render() {
+    console.log(this.state.students);
+    return (
+      ...
+    )
+  }
+}
+```
+
+---
+## API Calls Part 2
+
+So there is some new info to look at here: one is the `axios.get()` this is a method from the newly added `axios` npm. Second up is the URL that we will getting the info from, which is : https://codycollicott.github.io/yearbook/Data/students.json. (if you access this via the browser you will see a text output).
+
+### .Then()
+The `.then(response)` method is called when the API is sucessful, the `response` argument will hold all the info that was returned by that URL
+
+### .Catch()
+The `.catch(err)` is called when the API fails for whatever reason (such as the URL not being valid)
+
+```
+Class Test extends React.Component {
+  componentDidMount() {
+    axios.get('https://codycollicott.github.io/yearbook/Data/students.json')
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log("an error occured")
+      console.log(error);
+    })
+  }
+  render() {
+    console.log(this.state.students);
+    return (
+      ...
+    )
+  }
+}
+```
+
+---
+## API Calls Part 3
+
+Next up is modifing the state with the response we get from our API call, we do this by called the `this.setState()` inside the `.then()` method of our API call.
+
+``` JS
+Class Test extends React.Component {
+  componentDidMount() {
+    axios.get('https://codycollicott.github.io/yearbook/Data/students.json')
+    .then(response => {
+      this.setState({
+        ...this.state,
+        students: response.data
+      })
+    })
+    .catch(error => {
+      console.log("an error occured")
+      console.log(error);
+    })
+  }
+  render() {
+    console.log(this.state.students);
+    return (
+      ...
+    )
+  }
+}
+```
+
+
+---
+## API Calls Part 3
+
+Now that we can see the data going from the API call to the state of our component we can use that data within our render function.
+
+``` JS
+Class Test extends React.Component {
+  componentDidMount() {
+    ...
+  }
+  render() {
+    const students = this.state.students;
+    return (
+      <div>
+        {students && students.map(student => (
+          <h4> {student.title} </h4>
+        ))}
+      </div>
+    )
+  }
+}
+```
+
+
+---
+## API
+
+Before moving on to the next section try and complete exercice 7 [here](/react-course/exercices/exercices-7.html#1) 
+
+    </textarea>
+    <script src="/react-course/js/vendor/remark.min.js"></script>
+    <script src="/react-course/js/vendor/remark-language.js"></script>
+    <script src="/react-course/js/main.js"></script>
+  </body>
+</html>
