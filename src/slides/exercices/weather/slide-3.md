@@ -1,4 +1,4 @@
-## State Part 3
+## Weather App 3
 
 In that last step we went over how to modify the state in react, now we need to use those updated values. One peice of the life cycle is the render, so in order of opperations it will look like this:
 
@@ -21,4 +21,6 @@ the output from this will be :
 `render undefined`
 `render Toronto`
 We can tell from this that the render function does indeed fire twice, once when the App loads and then another time when the state is updated.
+
+You can download the completed example [here](https://github.com/codycollicott/weather)
 ---

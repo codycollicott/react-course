@@ -1,4 +1,4 @@
-## State part 2
+## Weather App 2
 
 Next up is modifing the state, we do this with the `setState` function, which can be explained [here](https://www.freecodecamp.org/news/get-pro-with-react-setstate-in-10-minutes-d38251d1c781/) if you look at line 25 of `app.js` you will see the function that updates the state. The function function that wraps it is called `axios` it is a way of getting information from a service called an API. The basic structure is this: 
 
