@@ -9,5 +9,8 @@ Let's first take a look a the life blood of React, Components. The real purpose 
 3. Render
 4. Import / Export
 
-You can read more about react [here](https://medium.com/@joshuanelson/react-explaining-explained-13a3fe6e5b9d) and [here](https://dev.to/tiffanywismer/explain-reactjs-like-im-five--2606)
+You can read more about react: 
+1. [here](https://www.c-sharpcorner.com/article/what-and-why-reactjs/) 
+2. [here](https://dev.to/tiffanywismer/explain-reactjs-like-im-five--2606) 
+3. [here] (https://www.fullstackreact.com/30-days-of-react/day-1/)
 ---
